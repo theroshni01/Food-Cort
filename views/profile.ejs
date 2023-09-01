@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+		background-image: url('https://img.freepik.com/free-vector/paper-style-white-monochrome-background_23-2149001605.jpg?size=626&ext=jpg&ga=GA1.2.1479246451.1689743451&semt=ais');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	
+        h1{
+            text-align: center;
+            /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+            margin-top: 100px;
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+        h2{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 30px;
+            /* font-family: fantasy; */
+        }
+        nav{
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+	width: 10%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: linear-gradient(to right, #ff105f, #ffad06);
+	border: 0;
+    text-align: center;
+	outline: none;
+	border-radius: 30px;
+        }
+        nav a{
+            text-decoration: none;
+            color: white;
+        }
+        .navigation{
+		/* width: 100%; */
+		height: 80px;
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        left: 0;
+		top: 0;
+		display: flex;
+		color: white;
+		justify-content: space-between;
+		padding: 5px 6%;
+		background-color: white;
+	}
+	.logo{
+		color: black;
+		font-size: 28px;
+		margin-top: 18px;
+		font-weight: bold;
+	}
+	.btn1{
+		text-align: center;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            width: 10%;
+        padding: 5px 30px;
+        cursor: pointer;
+        display: block;
+        margin-top: 15px; 
+        margin-bottom: 15px;
+        background: linear-gradient(to right, #ff105f, #ffad06);
+        border: 0;
+        outline: none;
+        border-radius: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    .profile-pic {
+	 color: transparent;
+	 transition: all 0.3s ease;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 position: relative;
+	 transition: all 0.3s ease;
+}
+ .profile-pic input {
+	 display: none;
+}
+ .profile-pic img {
+	 position: absolute;
+	 object-fit: cover;
+	 width: 165px;
+	 height: 165px;
+	 box-shadow: 0 0 10px 0 rgba(255, 255, 255, .35);
+	 border-radius: 100px;
+	 z-index: 0;
+}
+ .profile-pic .-label {
+	 cursor: pointer;
+	 height: 165px;
+	 width: 165px;
+}
+ .profile-pic:hover .-label {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 background-color: rgba(0, 0, 0, .8);
+	 z-index: 10000;
+	 color: #fafafa;
+	 transition: background-color 0.2s ease-in-out;
+	 border-radius: 100px;
+	 margin-bottom: 0;
+}
+ .profile-pic span {
+	 display: inline-flex;
+	 padding: 0.2em;
+	 height: 2em;
+ }
+ h4{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 20px;
+ }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+		<h1 class="logo">Organic-Shop</h1>
+		<button class="btn1"><a href="/logout">Logout</a></button>
+	</div>
+    <h1>PROFILE PAGE</h1>
+    <div class="profile-pic">
+        <label class="-label" for="file">
+          <span class="glyphicon glyphicon-camera"></span>
+          <span>Change Image</span>
+        </label>
+        <input id="file" type="file" onchange="loadFile(event)"/>
+        <img src="data:image/png;base64,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" id="output" width="200" />
+      </div>
+    <h4>Update your Profile Here</h4>
+    <h2>Welcome, You're Loggined Successfully</h2>
+    <script>
+        var loadFile = function (event) {
+  var image = document.getElementById("output");
+  image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+</body>
+</html>
